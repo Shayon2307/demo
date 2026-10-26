@@ -1,11 +1,17 @@
 ---
-title: "demo"
+title: "My Penguins"
+format: html
 ---
 
-## Quarto
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Average Bill Length by Species
 
 ```{r}
-1 + 1
+penguins |>
+  group_by(species) |>
+  summarize(avg_bill_length = mean(bill_length_mm, na.rm = TRUE))
 ```
