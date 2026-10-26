@@ -14,4 +14,12 @@ library(palmerpenguins)
 penguins |>
   group_by(species) |>
   summarize(avg_bill_length = mean(bill_length_mm, na.rm = TRUE))
+
+```
+
+## Penguin Bill Length and Depth
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point()
 ```
